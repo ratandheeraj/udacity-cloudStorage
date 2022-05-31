@@ -36,8 +36,8 @@ public class HomeController {
 
     @GetMapping("/home")
     public String getHomepage(
-            @ModelAttribute("userNoteDTO") UserNoteDTO userNoteDTO,
-            @ModelAttribute("userCredentialDTO") UserCredentialDTO userCredentialDTO,
+            @ModelAttribute("userNoteDto") UserNoteDTO userNoteDTO,
+            @ModelAttribute("userCredentialDto") UserCredentialDTO userCredentialDTO,
             Authentication authentication,
             Model model
     ) {
@@ -55,7 +55,7 @@ public class HomeController {
 
     @GetMapping("/logout")
     public String logOut(
-            @ModelAttribute("userDTO") UserDTO userDTO,
+            @ModelAttribute("userDto") UserDTO userDTO,
             Model model
     ) {
 
@@ -66,7 +66,7 @@ public class HomeController {
 
     @GetMapping("/login")
     public String loginPage(
-            @ModelAttribute("userDTO") UserDTO userDTO,
+            @ModelAttribute("userDto") UserDTO userDTO,
             @RequestParam(required = false, name = "error") Boolean errorValue,
             @RequestParam(required = false, name = "loggedOut") Boolean loggedOut,
             Model model
@@ -89,7 +89,7 @@ public class HomeController {
 
     @GetMapping("/signup")
     public String signupForm(
-            @ModelAttribute("userDTO") UserDTO userDTO,
+            @ModelAttribute("userDto") UserDTO userDTO,
             Model model
     ) {
 

@@ -3,7 +3,6 @@ package com.udacity.jwdnd.course1.cloudstorage.services;
 import com.udacity.jwdnd.course1.cloudstorage.mappers.CredentialMapper;
 import com.udacity.jwdnd.course1.cloudstorage.mappers.UserMapper;
 import com.udacity.jwdnd.course1.cloudstorage.models.User;
-import org.apache.ibatis.annotations.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import java.util.ArrayList;
 @Service
 public class AuthenticationService implements AuthenticationProvider {
 
-    private final Logger logger = LoggerFactory.getLogger(AuthenticationService.class);
+    //private final Logger logger = LoggerFactory.getLogger(AuthenticationService.class);
 
     @Autowired
     private CredentialMapper credentialMapper;

@@ -3,7 +3,7 @@ package com.udacity.jwdnd.course1.cloudstorage.models;
 import java.util.Arrays;
 
 public class File {
-    private Integer fileId;
+    private Integer fileid;
     private String filename;
     private String contenttype;
     private String filesize;
@@ -22,7 +22,7 @@ public class File {
     }
 
     public File(Integer fileId, String filename, String contenttype, String filesize, Integer userid, byte[] filedata) {
-        this.fileId = fileId;
+        this.fileid = fileId;
         this.filename = filename;
         this.contenttype = contenttype;
         this.filesize = filesize;
@@ -31,11 +31,11 @@ public class File {
     }
 
     public Integer getFileId() {
-        return fileId;
+        return fileid;
     }
 
-    public void setFileId(Integer fileId) {
-        this.fileId = fileId;
+    public void setFileId(Integer fileid) {
+        this.fileid = fileid;
     }
 
     public String getFilename() {
@@ -82,7 +82,7 @@ public class File {
     @Override
     public String toString() {
         return "File {" +
-                "fileId=" + fileId +
+                "fileId=" + fileid +
                 ", filename='" + filename + '\'' +
                 ", contenttype='" + contenttype + '\'' +
                 ", filesize='" + filesize + '\'' +

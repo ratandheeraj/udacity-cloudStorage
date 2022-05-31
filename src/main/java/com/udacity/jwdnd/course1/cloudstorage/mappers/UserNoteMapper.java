@@ -12,7 +12,7 @@ public interface UserNoteMapper {
     List<UserNoteDTO> getNotesByUsername(String username);
 
     @Options(useGeneratedKeys = true, keyProperty = "noteid")
-    int insertNoteByUsername(
+    int createNoteByUsername(
             String username,
             String notetitle,
             String notedescription);

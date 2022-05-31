@@ -21,7 +21,7 @@ public class NoteController {
 
     @PostMapping("/note")
     public String noteSubmit(
-            @ModelAttribute("userNoteDTO") UserNoteDTO userNoteDTO,
+            @ModelAttribute("userNoteDto") UserNoteDTO userNoteDTO,
             Authentication authentication,
             Model model
     ) {
@@ -34,7 +34,7 @@ public class NoteController {
 
     @GetMapping("/note")
     public String noteDeletion(
-            @ModelAttribute("userNoteVO") UserNoteDTO userNoteDTO,
+            @ModelAttribute("userNoteDto") UserNoteDTO userNoteDTO,
             @RequestParam(required = false, name = "noteId") Integer noteId,
             Authentication authentication,
             Model model

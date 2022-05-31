@@ -1,7 +1,6 @@
 package com.udacity.jwdnd.course1.cloudstorage.controllers;
 
 import com.udacity.jwdnd.course1.cloudstorage.models.UserCredentialDTO;
-import com.udacity.jwdnd.course1.cloudstorage.models.UserNoteDTO;
 import com.udacity.jwdnd.course1.cloudstorage.services.CredentialService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/authentication")
+@RequestMapping("/api/v1/credentials")
 public class CredentialController {
 
     private Logger logger = LoggerFactory.getLogger(CredentialController.class);
@@ -20,9 +19,9 @@ public class CredentialController {
     @Autowired
     private CredentialService credentialService;
 
-    @PostMapping("/auth")
+    @PostMapping("/credential")
     public String credentialSubmit(
-            @ModelAttribute("userCredentialVO") UserCredentialDTO userCredentialDTO,
+            @ModelAttribute("userCredentialDto") UserCredentialDTO userCredentialDTO,
             Authentication authentication,
             Model model
     ) {
@@ -35,9 +34,9 @@ public class CredentialController {
         return "redirect:/result?isSuccess=" + isSuccess;
     }
 
-    @GetMapping("/auth")
+    @GetMapping("/credential")
     public String credentialDeletion(
-            @ModelAttribute("userCredentialVO") UserCredentialDTO userCredentialVO,
+            @ModelAttribute("userCredentialDto") UserCredentialDTO userCredentialVO,
             @RequestParam(required = false, name = "credentialId") Integer credentialId,
             Authentication authentication,
             Model model

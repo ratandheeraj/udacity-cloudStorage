@@ -13,7 +13,6 @@ public class AuthorizationService {
 
 
     public boolean signupUser(UserDTO userDTO) {
-
         String username = userDTO.getUsername();
 
         if (this.userService.isUsernameAvailable(username)) {
@@ -21,7 +20,6 @@ public class AuthorizationService {
         }
 
         this.userService.createUser(userDTO);
-
         return true;
     }
 }

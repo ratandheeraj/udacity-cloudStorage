@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Service
 public class CredentialService {
 
-    private Logger logger = LoggerFactory.getLogger(CredentialService.class);
+    //private Logger logger = LoggerFactory.getLogger(CredentialService.class);
 
     @Autowired
     private EncryptionService encryptionService;

@@ -13,9 +13,5 @@ public class CloudStorageApplication {
 		SpringApplication.run(CloudStorageApplication.class, args);
 	}
 
-	@Bean
-	public PasswordEncoder configurePasswordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
 
 }
