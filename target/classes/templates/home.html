@@ -67,16 +67,16 @@
                     + Add a New Credential
                 </button>
 
-                <div th:replace="code-snippets/table :: table"></div>
+                <div th:replace="code-snippets/credentialTable :: table"></div>
 
                 <div class="modal fade" id="credentialModal" tabindex="-1" role="dialog" aria-labelledby="credentialModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <div th:replace="code-snippets/modal :: header"></div>
+                            <div th:replace="code-snippets/credentialModal :: header"></div>
                             <div class="modal-body">
-                                <div th:insert="code-snippets/modal :: form"></div>
+                                <div th:insert="code-snippets/credentialModal :: form"></div>
                             </div>
-                            <div th:replace="code-snippets/modal :: footer"></div>
+                            <div th:replace="code-snippets/credentialModal :: footer"></div>
                         </div>
                     </div>
                 </div>

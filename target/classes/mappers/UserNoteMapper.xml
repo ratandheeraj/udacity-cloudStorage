@@ -10,24 +10,12 @@
     </resultMap>
 
     <select id="getNotesByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
-        SELECT
-        noteid,
-        u.userid,
-        notetitle,
-        notedescription
-        FROM
-        notes n
-        INNER JOIN users u ON u.userid = n.userid
-        WHERE username = #{username}
+        SELECT noteid, u.userid, notetitle, notedescription
+        FROM notes n INNER JOIN users u ON u.userid = n.userid WHERE username = #{username}
     </select>
 
     <insert id="createNoteByUsername" parameterType="java.lang.String">
-        INSERT INTO notes(notetitle, notedescription, userid)
-        VALUES (
-        #{notetitle}, #{notedescription}, (
-        SELECT userid
-        FROM   users
-        WHERE  username = #{username}
-        ))
+        INSERT INTO notes(notetitle, notedescription, userid) VALUES (
+        #{notetitle}, #{notedescription}, ( SELECT userid FROM  users WHERE  username = #{username} ))
     </insert>
 </mapper>

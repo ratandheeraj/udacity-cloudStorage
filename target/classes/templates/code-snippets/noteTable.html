@@ -12,7 +12,7 @@
 
 <td th:fragment="button-group">
   <button type="button" class="btn btn-success" id="edit" th:onclick="editNote([[${note}]])">Edit</button>
-  <a class="btn btn-danger" name="delete" th:href="@{api/v1/notes/note?noteId={noteId}(noteId=${note.noteId})}">
+  <a class="btn btn-danger" id="delete" th:href="@{api/v1/notes/note?noteId={noteId}(noteId=${note.noteId})}">
     Delete
   </a>
 </td>

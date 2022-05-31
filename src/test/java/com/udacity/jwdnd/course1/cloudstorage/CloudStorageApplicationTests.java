@@ -76,7 +76,7 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
-	public void newUserAccessTest() {
+	public void newUserTest() {
 		WebDriverWait wait = new WebDriverWait(driver, 3);
 		// signup
 		doMockSignUp(firstName,lastName,userName+"d",password);
@@ -95,6 +95,9 @@ class CloudStorageApplicationTests {
 		Assertions.assertEquals("Login", driver.getTitle());
 	}
 
+	/**
+	 * Below tests are for Note CRUD
+	 */
 	public void createNote(){
 		WebDriverWait wait = new WebDriverWait (driver, 30);
 		JavascriptExecutor jse =(JavascriptExecutor) driver;
@@ -117,7 +120,7 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
-	public void noteCreationTest() {
+	public void createNoteTest() {
 		userName = "king";
 		doMockSignUp(firstName,lastName,userName,password);
 		doLogIn(userName, password);
@@ -140,7 +143,7 @@ class CloudStorageApplicationTests {
 
 
 	@Test
-	public void noteUpdationTest() {
+	public void updateNoteTest() {
 		WebDriverWait wait = new WebDriverWait (driver, 10);
 		JavascriptExecutor jse =(JavascriptExecutor) driver;
 
@@ -198,7 +201,7 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
-	public void noteDeletionTest() {
+	public void deleteNoteTest() {
 		WebDriverWait wait = new WebDriverWait (driver, 30);
 		JavascriptExecutor jse =(JavascriptExecutor) driver;
 
@@ -222,6 +225,10 @@ class CloudStorageApplicationTests {
 		wait.until(ExpectedConditions.elementToBeClickable(deleteElement)).click();
 		Assertions.assertEquals("Result", driver.getTitle());
 	}
+
+	/**
+	 * Below tests are for credential CRUD
+	 */
 	public void createCredential(){
 		WebDriverWait wait = new WebDriverWait (driver, 10);
 		JavascriptExecutor jse =(JavascriptExecutor) driver;
@@ -242,7 +249,7 @@ class CloudStorageApplicationTests {
 		driver.get("http://localhost:" + this.port + "/home");
 	}
 	@Test
-	public void credentialCreationTest() {
+	public void createCredentialTest() {
 		WebDriverWait wait = new WebDriverWait (driver, 10);
 		JavascriptExecutor jse =(JavascriptExecutor) driver;
 		//login
@@ -269,7 +276,7 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
-	public void credentialUpdationTest() {
+	public void updateCredentialTest() {
 		WebDriverWait wait = new WebDriverWait (driver, 30);
 		JavascriptExecutor jse =(JavascriptExecutor) driver;
 
@@ -317,7 +324,7 @@ class CloudStorageApplicationTests {
 	}
 
 	@Test
-	public void credentialDeletionTest() {
+	public void deleteCredentialTest() {
 		WebDriverWait wait = new WebDriverWait (driver, 5);
 		JavascriptExecutor jse =(JavascriptExecutor) driver;
 		userName = "newUser2";
@@ -340,8 +347,6 @@ class CloudStorageApplicationTests {
 		wait.until(ExpectedConditions.elementToBeClickable(deleteElement)).click();
 		Assertions.assertEquals("Result", driver.getTitle());
 	}
-
-
 
 
 	/**
