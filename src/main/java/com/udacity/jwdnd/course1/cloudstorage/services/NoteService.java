@@ -3,8 +3,6 @@ package com.udacity.jwdnd.course1.cloudstorage.services;
 import com.udacity.jwdnd.course1.cloudstorage.mappers.NoteMapper;
 import com.udacity.jwdnd.course1.cloudstorage.mappers.UserNoteMapper;
 import com.udacity.jwdnd.course1.cloudstorage.models.UserNoteDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +10,6 @@ import java.util.List;
 
 @Service
 public class NoteService {
-
-    private final Logger logger = LoggerFactory.getLogger(NoteService.class);
 
     @Autowired
     private NoteMapper noteMapper;

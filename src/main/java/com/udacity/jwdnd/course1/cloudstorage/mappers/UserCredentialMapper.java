@@ -12,10 +12,5 @@ public interface UserCredentialMapper {
     List<UserCredentialDTO> getCredentialsByUsername(String username);
 
     @Options(useGeneratedKeys = true, keyProperty = "credentialid")
-    int createCredentialByUsername(
-            String url,
-            String usernameC,
-            String key,
-            String password,
-            String username);
+    int createCredentialByUsername(String url, String usernameC, String key, String password, String username);
 }

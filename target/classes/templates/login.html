@@ -10,6 +10,7 @@
 <div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;">
     <h1 class="display-5">Login</h1>
     <form th:object="${userDto}" th:action="@{/login}" th:if="${toLogin}" action="#" method="POST">
+        <div class="alert alert-dark" id="success-msg" th:if="${signupSuccessfully}">You successfully signed up!</div>
         <div th:if="${hasError}" class="alert alert-danger" id="invalidMessage">
             Invalid username or password
         </div>
@@ -42,7 +43,7 @@
                     th:field="*{password}"
             >
         </div>
-        <button type="submit" class="btn btn-primary" id="loginBtn">
+        <button type="submit" class="btn btn-primary" id="login-button">
             Login
         </button>
     </form>

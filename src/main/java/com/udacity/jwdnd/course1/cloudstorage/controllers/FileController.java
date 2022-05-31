@@ -9,21 +9,15 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 
 @Controller
 @RequestMapping("/api/v1/files")
@@ -49,6 +43,7 @@ public class FileController {
             return "redirect:/result?isSuccess=" + false + "&errorType=" + 1;
         }
 
+
         try {
             this.fileService.saveFile(fileUpload, username);
         } catch (IOException ioException) {
@@ -68,16 +63,13 @@ public class FileController {
     }
 
     @GetMapping("/download")
-    public ResponseEntity<InputStreamResource> downloadFile(
-            @RequestParam(required = false, name = "fileId") Integer fileId) {
-
+    public ResponseEntity<InputStreamResource> downloadFile(@RequestParam(required = false, name = "fileId") Integer fileId) {
         File file = this.fileService.getFileByFileId(fileId);
         String fileName = file.getFilename();
         String contentType = file.getContenttype();
         byte[] fileData = file.getFiledata();
 
         InputStream inputStream = new ByteArrayInputStream(fileData);
-
         InputStreamResource resource = new InputStreamResource(inputStream);
 
         return ResponseEntity.ok()

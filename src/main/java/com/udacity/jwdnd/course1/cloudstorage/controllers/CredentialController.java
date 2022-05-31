@@ -13,39 +13,32 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/api/v1/credentials")
 public class CredentialController {
-
-    private Logger logger = LoggerFactory.getLogger(CredentialController.class);
+    private final Logger logger = LoggerFactory.getLogger(CredentialController.class);
 
     @Autowired
     private CredentialService credentialService;
 
     @PostMapping("/credential")
     public String credentialSubmit(
-            @ModelAttribute("userCredentialDto") UserCredentialDTO userCredentialDTO,
-            Authentication authentication,
-            Model model
+        @ModelAttribute("userCredentialDto") UserCredentialDTO userCredentialDTO,
+        Authentication authentication,
+        Model model
     ) {
-
         String username = (String) authentication.getPrincipal();
-
         Boolean isSuccess = this.credentialService.createOrUpdateCredential(
                 userCredentialDTO, username);
-
         return "redirect:/result?isSuccess=" + isSuccess;
     }
 
     @GetMapping("/credential")
     public String credentialDeletion(
-            @ModelAttribute("userCredentialDto") UserCredentialDTO userCredentialVO,
-            @RequestParam(required = false, name = "credentialId") Integer credentialId,
-            Authentication authentication,
-            Model model
+        @ModelAttribute("userCredentialDto") UserCredentialDTO userCredentialDto,
+        @RequestParam(required = false, name = "credentialId") Integer credentialId,
+        Authentication authentication,
+        Model model
     ) {
-
         this.logger.error("CredentialId: " + credentialId.toString());
-
         Boolean isSuccess = this.credentialService.deleteCredential(credentialId);
-
         return "redirect:/result?isSuccess=" + isSuccess;
     }
 }

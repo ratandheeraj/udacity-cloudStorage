@@ -14,15 +14,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 public class HomeController {
 
-    private Logger logger = LoggerFactory.getLogger(HomeController.class);
+    private final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @Autowired
     private AuthorizationService authorizationService;
@@ -115,7 +113,6 @@ public class HomeController {
         Map<String, Object> data = new HashMap<>();
 
         if (!this.authorizationService.signupUser(userDTO)) {
-
             data.put("toSignUp", true);
             data.put("signupSuccessfully", false);
             data.put("hasError", true);

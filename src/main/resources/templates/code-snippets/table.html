@@ -20,11 +20,13 @@
         <button
             type="button"
             class="btn btn-success"
+            id="edit-cred"
             th:onclick="editCredential([[${credential}]])"
         >
           Edit
         </button>
         <a class="btn btn-danger"
+           id="delete-cred"
            th:href="@{api/v1/credentials/credential?credentialId={credentialId}(credentialId=${credential.credentialId})}"
         >
           Delete

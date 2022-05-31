@@ -13,7 +13,7 @@
     </div>
 
     <h1 class="display-5">Sign Up</h1>
-    <div class="alert alert-dark" th:if="${not toSignUp} and ${signupSuccessfully}">You successfully signed up! Please continue to the
+    <div class="alert alert-dark" id="success-msg" th:if="${not toSignUp} and ${signupSuccessfully}">You successfully signed up! Please continue to the
         <a th:href="@{/login}" id="to-login-page">
             login
         </a> page.

@@ -12,8 +12,5 @@ public interface UserNoteMapper {
     List<UserNoteDTO> getNotesByUsername(String username);
 
     @Options(useGeneratedKeys = true, keyProperty = "noteid")
-    int createNoteByUsername(
-            String username,
-            String notetitle,
-            String notedescription);
+    int createNoteByUsername(String username, String notetitle, String notedescription);
 }

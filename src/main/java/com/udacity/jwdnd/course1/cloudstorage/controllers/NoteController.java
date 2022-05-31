@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/notes")
 public class NoteController {
 
-    private Logger logger = LoggerFactory.getLogger(NoteController.class);
+    private final Logger logger = LoggerFactory.getLogger(NoteController.class);
 
     @Autowired
     private NoteService noteService;

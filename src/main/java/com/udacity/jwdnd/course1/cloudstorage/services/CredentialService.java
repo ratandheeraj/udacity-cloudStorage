@@ -3,8 +3,6 @@ package com.udacity.jwdnd.course1.cloudstorage.services;
 import com.udacity.jwdnd.course1.cloudstorage.mappers.CredentialMapper;
 import com.udacity.jwdnd.course1.cloudstorage.mappers.UserCredentialMapper;
 import com.udacity.jwdnd.course1.cloudstorage.models.UserCredentialDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +13,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class CredentialService {
-
-    //private Logger logger = LoggerFactory.getLogger(CredentialService.class);
 
     @Autowired
     private EncryptionService encryptionService;
@@ -55,7 +51,7 @@ public class CredentialService {
                     encryptedPassword,
                     username);
         } else {
-            this.credentialMapper.update(
+            this.credentialMapper.updateCredential(
                     userCredentialDTO.getUrl(),
                     userCredentialDTO.getUsername(),
                     encodedKey,
