@@ -1,0 +1,42 @@
+-------------------------------------------------------------------------------
+Test set: com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 3, Skipped: 0, Time elapsed: 62.335 s <<< FAILURE! - in com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests
+testLargeUpload  Time elapsed: 0.005 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for title to contain "Sign Up". Current title: "Please sign in" (tried for 2 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PPH-LAP-01396', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1038-oem', java.version: '11.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.54, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: /tmp/.com.google.Chrome.izfPPN}, goog:chromeOptions: {debuggerAddress: localhost:42801}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c3e4d0334cd881e11dafab02638e0de8
+	at com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests.doMockSignUp(CloudStorageApplicationTests.java:57)
+	at com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests.testLargeUpload(CloudStorageApplicationTests.java:181)
+
+getLoginPage  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Login> but was: <Please sign in>
+	at com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests.getLoginPage(CloudStorageApplicationTests.java:44)
+
+testBadUrl  Time elapsed: 0.002 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for title to contain "Sign Up". Current title: "Please sign in" (tried for 2 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PPH-LAP-01396', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1038-oem', java.version: '11.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.54, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: /tmp/.com.google.Chrome.PVGoUe}, goog:chromeOptions: {debuggerAddress: localhost:43705}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 118e1b45b61eb4a053a19e75751fbc59
+	at com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests.doMockSignUp(CloudStorageApplicationTests.java:57)
+	at com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests.testBadUrl(CloudStorageApplicationTests.java:157)
+
+testRedirection  Time elapsed: 0.001 s  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+chrome not reachable
+  (Session info: chrome=101.0.4951.54)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PPH-LAP-01396', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1038-oem', java.version: '11.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.54, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: /tmp/.com.google.Chrome.GHByFb}, goog:chromeOptions: {debuggerAddress: localhost:36393}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1f56aa94cba7fb2efbb5e6dce423ed5e
+	at com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests.doMockSignUp(CloudStorageApplicationTests.java:57)
+	at com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests.testRedirection(CloudStorageApplicationTests.java:136)
+
